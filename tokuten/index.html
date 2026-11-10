@@ -91,6 +91,16 @@ h2.sec{font-size:24px;color:var(--navy)}
 .no{font-size:13px;font-weight:700;color:var(--accent-ink);background:var(--accent);border-radius:6px;padding:2px 8px;white-space:nowrap;margin-top:3px}
 .items b{display:block;font-size:17px;line-height:1.5}
 .items small{display:block;font-size:15px;color:var(--sub);line-height:1.6;margin-top:2px}
+/* LINE */
+.line{margin-top:20px;background:var(--soft);border:2px solid #06C755;border-radius:16px;padding:18px}
+.line .btn{background:#06C755;color:#fff;font-size:22px;margin-top:0;text-decoration:none}
+.line .next{border-color:#06C755}
+.line .next b{color:#05a648}
+.alt{margin-top:14px}
+.alt>summary{cursor:pointer;font-size:16px;font-weight:700;color:var(--sub);padding:10px 4px;list-style:none;text-decoration:underline;text-underline-offset:3px}
+.alt>summary::-webkit-details-marker{display:none}
+.alt[open]>summary{display:none}
+.alt .form{margin-top:6px}
 .mail{margin-top:16px;border-left:4px solid var(--accent);padding:4px 0 4px 14px;font-size:16px}
 .faq dt{font-weight:700;margin-top:14px}
 .faq dd{margin:4px 0 0;font-size:16px}
@@ -124,9 +134,19 @@ a{color:var(--navy)}
       <path class="pig-l" d="M27 92c-10-2-12 8-4 10s4 10-6 8"/>
     </svg>
     </div>
-    <div class="facts"><span>無料</span><span>メールアドレスだけ</span><span>30秒</span><span>2026年10月版</span></div>
+    <div class="facts"><span>無料</span><span id="howChip">メールアドレスだけ</span><span>30秒</span><span>2026年10月版</span></div>
     <div class="type" id="type" hidden><small>診断の結果</small><b id="typeName"></b><div id="typeLead" style="font-size:15px;margin-top:4px"></div></div>
 
+    <div class="line" id="line1" hidden>
+      <a class="btn lineBtn" href="#">LINEで受け取る（無料）</a>
+      <div class="next">LINEが開いたら「追加」を押すだけ。<b>すぐにLINEで特典が届きます。</b></div>
+      <ul class="trust">
+        <li>登録は無料です。お金がかかることはありません</li>
+        <li>お名前・口座番号・暗証番号・マイナンバーは一切お聞きしません</li>
+        <li>いつでもブロックで止められます</li>
+      </ul>
+    </div>
+    <details class="alt" id="alt1" open><summary>LINEを使っていない方は、メールで受け取る</summary>
     <form class="form" id="f1" method="post" action="https://1lejend.com/stepmail/kd.php?no=fylTIRnMmke" novalidate>
       <label for="mail1">メールアドレス</label>
       <input id="mail1" name="touroku_mail" type="email" inputmode="email" autocomplete="email" placeholder="例）taro@example.com" required>
@@ -141,6 +161,7 @@ a{color:var(--navy)}
         <li>メールの配信は、いつでもワンクリックで止められます</li>
       </ul>
     </form>
+    </details>
     <p>いつ何が届くかわかるカレンダー、何歳から受け取るといくらかの早見表など、動画の数字を<b>手元に残せる1冊</b>にまとめました。</p>
 
     <div class="new9" id="new11">
@@ -171,11 +192,16 @@ a{color:var(--navy)}
   <section class="board">
     <h2 class="sec">11の特典</h2>
     <ol class="items" id="items"></ol>
-    <div class="mail"><b>メールでは</b>、動画では公開していない、お金と資産形成のヒントになる最新情報もお届けします。年金・税金・iDeCo・新NISAの「知らないと損をする変更」も、変更があったときにお知らせします。</div>
+    <div class="mail"><b id="mailLead">メールでは</b>、動画では公開していない、お金と資産形成のヒントになる最新情報もお届けします。年金・税金・iDeCo・新NISAの「知らないと損をする変更」も、変更があったときにお知らせします。</div>
   </section>
 
   <section class="board">
     <h2 class="sec">もう一度、ここから受け取れます</h2>
+    <div class="line" id="line2" hidden>
+      <a class="btn lineBtn" href="#">LINEで受け取る（無料）</a>
+      <div class="next">LINEが開いたら「追加」を押すだけ。<b>すぐにLINEで特典が届きます。</b></div>
+    </div>
+    <details class="alt" id="alt2" open><summary>LINEを使っていない方は、メールで受け取る</summary>
     <form class="form" id="f2" method="post" action="https://1lejend.com/stepmail/kd.php?no=fylTIRnMmke" novalidate>
       <label for="mail2">メールアドレス</label>
       <input id="mail2" name="touroku_mail" type="email" inputmode="email" autocomplete="email" placeholder="例）taro@example.com" required>
@@ -185,7 +211,10 @@ a{color:var(--navy)}
       <button class="btn" type="submit">8大特典＋早見表3枚を無料で受け取る</button>
       <div class="next">ボタンを押すと登録完了。<b>すぐに特典のメールが届きます。</b></div>
     </form>
+    </details>
     <dl class="faq">
+      <dt id="faqLineQ" hidden>LINEのボタンを押しても何も起きません</dt>
+      <dd id="faqLineA" hidden>パソコンでご覧の方は、表示されたQRコードをスマホのLINEで読み取ってください。スマホの方は、LINEアプリが入っているか確かめてください。</dd>
       <dt>メールが届きません</dt>
       <dd>「迷惑メール」や「プロモーション」のフォルダに入っていることがあります。数分たっても届かないときは、そちらを確かめてください。</dd>
       <dt>スマホでも見られますか</dt>
@@ -196,6 +225,13 @@ a{color:var(--navy)}
 </main>
 
 <script>
+/* LINE公式アカウントの友だち追加URL（https://lin.ee/...）。
+   動画ごとに「流入経路」のURLを作って v18 などに入れると、どの動画から登録されたかが分かる。
+   default が空のあいだは LINE ボタンを出さず、今までどおりメールだけを表示する。 */
+const LINE={
+ default:'',
+ v18:'', v19:'', v20:''
+};
 const ALL=[
  [1,'お金の置き場所 整理シート','預金・NISA・iDeCoを「入る・使う・備える・増やす」に分けて1枚に'],
  [2,'新NISA 失敗しないための7つの確認ポイント','生涯1,800万円の枠を、60代までにどう使うかの早見表つき'],
@@ -222,6 +258,15 @@ if(TYPES[t]){pick=TYPES[t][1];document.getElementById('type').hidden=false;
   document.getElementById('typeName').textContent='「'+TYPES[t][0]+'」の方へ';
   document.getElementById('typeLead').textContent='特典'+pick.join('・')+'が、とくにおすすめです（11の特典すべてが届きます）';}
 document.getElementById('items').innerHTML=ALL.map(([n,ti,w])=>`<li class="${pick.includes(n)?'pick':''}"><span class="no">特典${n}</span><div><b>${ti}</b><small>${w}</small></div></li>`).join('');
+const lineUrl=LINE[t]||LINE.default;
+if(lineUrl){
+  document.querySelectorAll('.lineBtn').forEach(a=>{a.href=lineUrl;
+    a.textContent=VIDEOS[t]?VIDEOS[t].btn.replace('を無料で受け取る','をLINEで受け取る（無料）'):'LINEで受け取る（無料）';});
+  for(const id of ['line1','line2','faqLineQ','faqLineA'])document.getElementById(id).hidden=false;
+  for(const id of ['alt1','alt2'])document.getElementById(id).open=false;
+  document.getElementById('howChip').textContent='LINEで1タップ';
+  document.getElementById('mailLead').textContent='LINE・メールでは';
+}
 for(const k of ['1','2']){
   const f=document.getElementById('f'+k), m=document.getElementById('mail'+k), e=document.getElementById('err'+k);
   f.addEventListener('submit',ev=>{const v=m.value.trim(); m.value=v;
